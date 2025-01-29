@@ -29,7 +29,7 @@ Operators manage the assets deposited by stakers.
     - The Operator is subject to a `MIN_STAKE_UPDATE_DELAY` of 9 days to prevent front-running a slashing event.  
     - DSS can slash any malicious behavior occurring before the withdrawal initiation for up to 7 days.
     - An operator can fully unregister from a DSS after all the vaults are unstaked from the DSS.
-- **Jailing**: Operators can be jailed by the DSS arbitrarily usually valid reasons like if they are too overleveraged for a DSS' liking
+- **Jailing**: Operators can be jailed by the DSS arbitrarily usually for valid reasons like if they are too overleveraged for a DSS' liking
     - The effects of jailing are also arbitrary and can be decided by the DSS. This can range from no rewards to not allowing the operator to perform any tasks and forcing them to unallocate from the DSS. Jailing is optional and is implemented inside the DSS contract and not the core contract.
 
 ### DSS (Distributed Secure Services)
@@ -38,7 +38,7 @@ DSSs coordinate the tasks and rewards for operators.
   - Rewards are distributed by the DSS (recommended to use a merkle drop for O(1) complexity). _Rewards distribution is not a part of core contracts_
 - **Slashing Rights**: 
     - DSSs have the right to slash vaults if it feels that an operator had failed to perform its tasks adequately.
-    - If the slashing commitee feels that the slashing was unfair then they posses the right to veto a slashing event.
+    - If the slashing committee feels that the slashing was unfair then they possess the right to veto a slashing event.
     - DSSs needs to set the max slashable percentage `dssSlashablePercentageWad`, which can be done only once.
     - DSSs is eligible to slash vaults which are staked into them by the operator.
     - DSSs is subjected to a cooldown of 2 days(represented by `SLASHING_COOLDOWN`) after each slashing request per operator.
